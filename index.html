@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="ejs_production.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <style type="text/css">
+        body {
+            font-family: sans-serif;
+        }
+    </style>
+  </head>
+
+  <body>
+    <h2>HackerNews</h2>
+    <ol></ol>
+      
+    <script type="text/template" id="topic-list">
+        <li>
+            <div><a href="<%= data.url %>"><%= data.title %></a></div>
+            <div><%= data.score %> points by <%= data.by %>
+                <% if (data.kids !== undefined ) { %>
+                    | <%= data.kids.length %> comments
+                <% } %>
+            </div>
+        </li>
+    </script>
+  </body>
+</html>
